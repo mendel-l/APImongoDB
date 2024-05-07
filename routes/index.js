@@ -2,7 +2,6 @@ const express = require('express');
 const router = express.Router();
 //logs
 const registrologinsController = require('../controllers/logs/registrologinsController');
-
 const proyectoController = require('../controllers/proyectoController')
 
 module.exports = function () {
@@ -13,8 +12,10 @@ module.exports = function () {
     //LAS RUTAS VAN A ESTAR ORDENADAS SEGUN CARPETAS DE MODELS
 
     //RUTAS LOGS
-    //logs
+    //log
     router.post('/pagos', registrologinsController.registrarPago);
+    router.put('/pagos/:correlativo', registrologinsController.actualizarPago);
+
 
     return router;
 }
